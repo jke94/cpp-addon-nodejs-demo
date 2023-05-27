@@ -1,15 +1,20 @@
 # cpp-addon-nodejs-demo
 C/C++ addons with Node-API
 
-
 # Generete addon.
 
 ```
-npm run rebuild --prefix .\demoaddon\ 
+npm run rebuild --prefix .\demoaddon 
 ```
 
 # Run javascript demo client.
 
 ```
 node .\demo_client.js
+```
+
+# Run typescript demo client.
+
+```
+ts-node .\demo_client_typescript.ts
 ```
