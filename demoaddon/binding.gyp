@@ -1,8 +1,10 @@
 {
   "targets": [
     {
-      "target_name": "addon",
-      "sources": [ "src/demo.cpp" ]
+      "target_name": "demoaddon",
+      "sources": [ 
+        "src/demo.cpp",
+        ]
     }
   ]
 }
