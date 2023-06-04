@@ -1,10 +1,18 @@
 // demo_client.js
 
-// const addon = require('./demoaddon/build/Release/addon');
+var addon = require('./demoaddon/build/Release/demoaddon.node')
+console.log(addon)
 
-// console.log('This should be eight:', addon.add(4, 5));
+var obj1 = addon.createObject('hello');
+var obj2 = addon.createObject('world');
 
-const addon = require('./demoaddon/build/Release/demoaddon');
+console.log(obj1.msg + ' ' + obj2.msg);
 
-const fn = addon();
-console.log(fn());
+var greet = addon.sayHello('Javi');
+var goodbye = addon.sayGoodbye('Javi');
+
+console.log(greet.msg);
+console.log(goodbye.msg);
+
+console.log(addon.myPropertyStr)
+console.log(addon.myPropertyNumber)
