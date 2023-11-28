@@ -19,7 +19,7 @@ npm install
 
 ## B. Generete addon.
 
-From *.\demoaddon* folder:
+From base repository folder:
 
 ```
 npm run rebuild --prefix .\demoaddon 
@@ -27,7 +27,7 @@ npm run rebuild --prefix .\demoaddon
 
 ## C. Run javascript demo client.
 
-From *.\demoaddon* folder:
+From base repository folder:
 
 ```
 node .\demo_client.js
