@@ -162,5 +162,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# 
+# Binaries
 demoaddon/build/
+
+# Visual Studio Code Folders.
+.vscode/
