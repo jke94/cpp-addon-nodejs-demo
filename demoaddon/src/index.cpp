@@ -31,9 +31,7 @@ namespace demoaddon
         Napi::Object obj = Napi::Object::New(env);
 
         obj.Set(Napi::String::New(
-            // Property name.
             env, "msg"),
-            // Property value.
             greeting->sayHello(info[0].ToString()));
 
         delete greeting;
@@ -53,10 +51,7 @@ namespace demoaddon
     Napi::Object Init(Napi::Env env, Napi::Object exports) 
     {
         exports.Set(
-            // property name => "createObject"
             Napi::String::New(env, "createObject"),
-
-            // property value => 'CreateObject' function.
             Napi::Function::New(env, CreateObject));
 
         exports.Set(
