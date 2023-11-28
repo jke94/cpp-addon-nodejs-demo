@@ -1,37 +1,44 @@
 # cpp-addon-nodejs-demo
+
 C/C++ addons with Node-API
 
-## A. Generete addon.
+## A. NPM install (typescript and node addons dependencies)
+
+
+From base repository folder:
+
+```
+npm install
+```
+
+From '.\demoaddon' folder:
+
+```
+npm install
+```
+
+## B. Generete addon.
+
+From *.\demoaddon* folder:
 
 ```
 npm run rebuild --prefix .\demoaddon 
 ```
 
-## B. Run javascript demo client.
+## C. Run javascript demo client.
+
+From *.\demoaddon* folder:
 
 ```
 node .\demo_client.js
 ```
 
-## C. Run typescript demo client.
+## D. Run typescript demo client.
+
+From base repository folder:
 
 ```
 ts-node .\demo_client_typescript.ts
-```
-
-## EXTRA: Build  Docker compose (for running unit tests)
-
-- Linux:
-
-```
-sudo docker compose -f ./docker-compose.yml -p node-addom-demo up --build
-```
-
-- Windows:
-
-```
-docker-compose -f ./docker-compose.yml -p node-addom-demo up --build
-
 ```
 
 ## Useful links
