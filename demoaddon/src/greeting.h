@@ -2,13 +2,19 @@
 
 namespace demoaddon
 {
-    class Greeting
+    class IGreeting
     {
-    private:
-        /* data */
-    public:
-        Greeting();
-        ~Greeting();
-        std::string sayHello(std::string name);
+        public:
+            virtual std::string sayHello(std::string name) = 0;
+    };
+
+    class Greeting : public IGreeting
+    {
+        private:
+            /* data */
+        public:
+            Greeting();
+            ~Greeting();
+            std::string sayHello(std::string name) override;
     };
 }
