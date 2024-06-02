@@ -1,9 +1,16 @@
 # cpp-addon-nodejs-demo
 
-C/C++ addons with N-API (Node-API)
+C/C++ addons with N-API (Node-API). This code have been developed under windows operating system and using:
 
-## A. NPM install (typescript and node addons dependencies)
+```
+PS J:\Repositories\cpp-addon-nodejs-demo> node --version
+v20.14.0
+PS J:\Repositories\cpp-addon-nodejs-demo> npm --version
+10.8.1
+PS J:\Repositories\cpp-addon-nodejs-demo>
+```
 
+## A. Install development environment.
 
 From base repository folder:
 
@@ -11,24 +18,24 @@ From base repository folder:
 npm install
 ```
 
-From '.\demoaddon' folder:
-
-```
-npm install
-```
-
-## B. Generete addon.
+## B. Generate addon.
 
 From base repository folder:
 
 ```
-npm run rebuild --prefix .\demoaddon 
+npm run build --prefix .\demoaddon 
 ```
 
 ## C. Run javascript demo client.
 
 From base repository folder:
 
+```
+node .\demo_client_message_worker.js
+```
+```
+node .\demo_client_worker.js
+```
 ```
 node .\demo_client.js
 ```
@@ -38,9 +45,16 @@ node .\demo_client.js
 From base repository folder:
 
 ```
-ts-node .\demo_client_typescript.ts
+node .\demo_client_message_worker.ts
+```
+```
+node .\demo_client_worker.ts
+```
+```
+node .\demo_client.ts
 ```
 
-## Useful links
+
+## E. Useful links
 
 - [Node.js v21.2.0 documentation](https://nodejs.org/api/addons.html)
