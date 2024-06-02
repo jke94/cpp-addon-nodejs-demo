@@ -1,4 +1,4 @@
-#include "greeting.h"
+#include "Greeting.h"
 
 namespace demoaddon
 {

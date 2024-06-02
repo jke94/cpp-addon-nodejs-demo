@@ -3,9 +3,11 @@
 #include <ctime>
 #include <string>
 
-#include "index.h"
-#include "goodbye.h"
-#include "greeting.h"
+#include "Demoaddon.h"
+#include "Goodbye.h"
+#include "Greeting.h"
+#include "CallbackWorker.h"
+#include "MessageWorker.h"
 
 namespace demoaddon 
 {
@@ -32,6 +34,14 @@ namespace demoaddon
         exports.Set(
             Napi::String::New(env, "myPropertyNumber"),
             Napi::Number::New(env, 1994)
+        );
+        exports.Set(
+            Napi::String::New(env, "startAsyncWork"),
+            Napi::Function::New(env, StartAsyncWork)
+        );
+        exports.Set(
+            Napi::String::New(env, "startAsyncWorker"), 
+            Napi::Function::New(env, StartAsyncWorker)
         );
 
         return exports;
@@ -91,4 +101,43 @@ namespace demoaddon
 
         return obj;
     }
+
+    Napi::Value StartAsyncWork(const Napi::CallbackInfo& info)
+    {
+        Napi::Env env = info.Env();
+
+        if (info.Length() < 1 || !info[0].IsFunction()) 
+        {
+            Napi::TypeError::New(
+                env, "Expected a callback function"
+            ).ThrowAsJavaScriptException();
+            return env.Null();
+        }
+
+        Napi::Function callback = info[0].As<Napi::Function>();
+        CallbackWorker* worker = new CallbackWorker(callback);
+        worker->Queue();
+        return env.Undefined();
+    }
+
+    Napi::Value StartAsyncWorker(const Napi::CallbackInfo& info)
+    {
+        Napi::Env env = info.Env();
+
+        if (info.Length() < 2 || !info[0].IsFunction() || !info[1].IsFunction()) 
+        {
+            Napi::TypeError::New(
+                env, "Expected two callback functions"
+            ).ThrowAsJavaScriptException();
+            
+            return env.Null();
+        }
+
+        Napi::Function callback = info[0].As<Napi::Function>();
+        Napi::Function progressCallback = info[1].As<Napi::Function>();
+        MessageWorker* worker = new MessageWorker(callback, progressCallback);
+        worker->Queue();
+        
+        return env.Undefined();
+    }    
 }

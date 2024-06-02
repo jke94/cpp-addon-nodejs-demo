@@ -1,6 +1,6 @@
 # cpp-addon-nodejs-demo
 
-C/C++ addons with Node-API
+C/C++ addons with N-API (Node-API)
 
 ## A. NPM install (typescript and node addons dependencies)
 

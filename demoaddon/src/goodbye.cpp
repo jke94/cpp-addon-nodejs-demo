@@ -1,4 +1,4 @@
-#include "goodbye.h"
+#include "Goodbye.h"
 
 namespace demoaddon
 {
