@@ -9,7 +9,7 @@ console.log('Created object: ', obj1)
 var obj2 = addon.createObject('world')
 console.log('Created object: ', obj2)
 
-console.log(obj1.msg + ' ' + obj2.msg)
+console.log(obj1.content + ' ' + obj2.created_time)
 
 var greet = addon.sayHello('Javi')
 var goodbye = addon.sayGoodbye('Javi')
